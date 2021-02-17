@@ -1,0 +1,19 @@
+name: Hurray
+on:
+  check_run:
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      staging:
+        description: Deploy to staging
+        required: false
+        default: 'no'
+
+jobs:
+  hurray:
+    name: Hurray
+    runs-on: ubuntu-latest
+    if: github.event.inputs.staging == 'yes'
+    steps:
+    - name: Hurray
+      run: echo I am repo dispatch
