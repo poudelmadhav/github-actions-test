@@ -1,7 +1,10 @@
 name: Hurray
 on:
-  check_run:
-    types: [completed]
+  workflow_run:
+    workflows: ["Hello World"]
+    branches: [main]
+    types:
+      - completed
   workflow_dispatch:
     inputs:
       staging:

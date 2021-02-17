@@ -8,12 +8,3 @@ jobs:
     steps:
       - name: echo Hello
         run: echo Hello
-
-  world:
-    name: World
-    needs: hello
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/develop'
-    steps:
-      - name: Echo World
-        run: echo World
