@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       hurray:
-        description: Run hurray job in this file
+        description: Deploy
         required: true
 
 jobs:
