@@ -7,16 +7,14 @@ on:
       - completed
   workflow_dispatch:
     inputs:
-      staging:
-        description: Deploy to staging
-        required: false
-        default: 'no'
+      hurray:
+        description: Run hurray job in this file
+        required: true
 
 jobs:
   hurray:
     name: Hurray
     runs-on: ubuntu-latest
-    if: github.event.inputs.staging == 'yes'
     steps:
     - name: Hurray
       run: echo I am repo dispatch
