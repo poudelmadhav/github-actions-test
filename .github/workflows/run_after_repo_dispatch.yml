@@ -1,0 +1,16 @@
+name: I will run after workflow Hurray
+on:
+  workflow_run:
+    workflows:
+      - Hurray
+    branches:
+      - release/**
+    types:
+      - completed
+jobs:
+  some_task:
+    name: After workflow dispatch
+    runs-on: ubuntu-latest
+    steps:
+    - name: After workflow dispatch
+      run: echo I ran after workflow dispatch in release branch
