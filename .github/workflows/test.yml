@@ -8,3 +8,7 @@ jobs:
     steps:
       - name: echo Hello
         run: echo Hello
+      - uses: actions/checkout@v2
+        with:
+          bundle-cache: true
+          ruby-version: 3.0.3
