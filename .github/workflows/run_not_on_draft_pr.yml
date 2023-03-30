@@ -5,7 +5,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.head.sha != github.event.pull_request.base.sha && github.run_number != github.event.pull_request.number
+    if: "!github.event.pull_request.draft"
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
