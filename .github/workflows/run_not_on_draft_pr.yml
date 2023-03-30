@@ -5,9 +5,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: "!github.event.pull_request.draft"
+    outputs:
+      already-run: ${{ steps.check-run.outputs.already-run }}
+    if: !github.event.pull_request.draft
     steps:
+      - name: Check if workflow already ran
+        id: check-run
+        run: echo "::set-output name=already-run::$(git log --pretty=format:%H -1)"
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Build
         run: echo Build successful!
+    if: ${{ jobs.build.outputs.already-run != github.sha }}
