@@ -1,5 +1,8 @@
 name: Do not run on draft pr
 on:
+  push:
+    branches:
+     - not-run-on-draft-pr
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
 jobs:
