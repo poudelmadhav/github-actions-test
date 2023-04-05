@@ -6,5 +6,10 @@ jobs:
     name: Hello
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: echo Hello
         run: echo Hello
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundle-cache: true
+          ruby-version: 3.2.2
