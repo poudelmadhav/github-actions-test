@@ -8,6 +8,6 @@ jobs:
     if: "!github.event.pull_request.draft"
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         run: echo Build successful!
