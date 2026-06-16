@@ -15,9 +15,28 @@ jobs:
         startsWith(github.event.pull_request.head.ref, 'release/') ||
         startsWith(github.event.pull_request.head.ref, 'hotfix/')
       )
-
-    uses: poudelmadhav/github-workflows/.github/workflows/create-release.yml@v3
-    with:
-      branch: ${{ github.event.pull_request.head.ref }}
+    runs-on: ubuntu-latest
     permissions:
       contents: write
+    steps:
+      - uses: poudelmadhav/github-workflows@v3
+        with:
+          branch: ${{ github.event.pull_request.head.ref }}
+
+# If you want the reusable workflow .yml@v3 instead (job-level uses:):
+# jobs:
+#   release:
+#     if: >
+#       github.event.pull_request.merged == true &&
+#       (
+#         startsWith(github.event.pull_request.head.ref, 'release/') ||
+#         startsWith(github.event.pull_request.head.ref, 'hotfix/')
+#       )
+
+#     uses: poudelmadhav/github-workflows/.github/workflows/create-release.yml@v3
+#     with:
+#       branch: ${{ github.event.pull_request.head.ref }}
+#     permissions:
+#       contents: write
+
+# with default from poudelmadhav/github-workflows@v3
