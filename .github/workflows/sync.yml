@@ -17,7 +17,11 @@ jobs:
       )
 
     uses: poudelmadhav/github-workflows/.github/workflows/sync-main-to-develop.yml@v3
-    secrets: inherit
+    with:
+      source_branch: main
+      target_branch: develop
+    secrets:
+      approval_token: ${{ secrets.PAT_TOKEN }}
     permissions:
       contents: write
       pull-requests: write
