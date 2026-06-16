@@ -4,7 +4,7 @@ on:
     workflows:
       - Hello World
     branches:
-      - main
+      - develop
       - release/**
     types:
       - completed

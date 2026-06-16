@@ -1,0 +1,21 @@
+name: Sync Main to Develop
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+
+jobs:
+  sync:
+    if: >
+      github.event.pull_request.merged == true &&
+      (
+        startsWith(github.event.pull_request.head.ref, 'release/') ||
+        startsWith(github.event.pull_request.head.ref, 'hotfix/')
+      )
+
+    uses: poudelmadhav/github-workflows/.github/workflows/sync-main-to-develop.yml@v1
+
+    secrets: inherit
