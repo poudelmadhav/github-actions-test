@@ -17,3 +17,5 @@ jobs:
       )
 
     uses: poudelmadhav/github-workflows/.github/workflows/create-release.yml@v1
+    with:
+      branch: ${{ github.event.pull_request.head.ref }}
