@@ -16,6 +16,8 @@ jobs:
         startsWith(github.event.pull_request.head.ref, 'hotfix/')
       )
 
-    uses: poudelmadhav/github-workflows/.github/workflows/sync-main-to-develop.yml@v2
-
+    uses: poudelmadhav/github-workflows/.github/workflows/sync-main-to-develop.yml@v3
     secrets: inherit
+    permissions:
+      contents: write
+      pull-requests: write

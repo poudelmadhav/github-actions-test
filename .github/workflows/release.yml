@@ -16,6 +16,8 @@ jobs:
         startsWith(github.event.pull_request.head.ref, 'hotfix/')
       )
 
-    uses: poudelmadhav/github-workflows/.github/workflows/create-release.yml@v2
+    uses: poudelmadhav/github-workflows/.github/workflows/create-release.yml@v3
     with:
       branch: ${{ github.event.pull_request.head.ref }}
+    permissions:
+      contents: write
