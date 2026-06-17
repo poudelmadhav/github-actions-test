@@ -17,9 +17,10 @@ jobs:
       )
 
     uses: poudelmadhav/github-workflows/.github/workflows/sync-main-to-develop.yml@v4
-    with:
-      source_branch: main
-      target_branch: develop
+    # Optional inputs to override default values in the reusable workflow
+    # with:
+    #   source_branch: main     # default main
+    #   target_branch: develop  # default develop
     secrets:
       approval_token: ${{ secrets.PAT_TOKEN }}
     permissions:
