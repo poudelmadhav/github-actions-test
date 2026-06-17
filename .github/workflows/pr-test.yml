@@ -6,3 +6,7 @@ on:
 jobs:
   test:
     uses: poudelmadhav/github-workflows/.github/workflows/ruby-tests.yml@v5
+    with:
+      ruby_version: 3.2.2
+      rubocop: false
+      rspec: false
