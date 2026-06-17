@@ -1,0 +1,13 @@
+name: PR Test
+
+on:
+  pull_request:
+
+jobs:
+  test:
+    uses: poudelmadhav/github-workflows/.github/workflows/ruby-tests.yml@v5
+    # Optional inputs to override default values in the reusable workflow
+    # with:
+    #   ruby_version: 3.3 # read from .ruby-version by default if not specified or 4.0
+    #   rubocop: false    # default true
+    #   rspec: false      # default true
