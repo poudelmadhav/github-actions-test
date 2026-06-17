@@ -16,13 +16,13 @@ jobs:
         startsWith(github.event.pull_request.head.ref, 'hotfix/')
       )
 
-    uses: poudelmadhav/github-workflows/.github/workflows/sync-main-to-develop.yml@v4
+    uses: poudelmadhav/github-workflows/.github/workflows/sync-main-to-develop.yml@v6
     # Optional inputs to override default values in the reusable workflow
     # with:
     #   source_branch: main     # default main
     #   target_branch: develop  # default develop
-    secrets:
-      approval_token: ${{ secrets.PAT_TOKEN }}
+    # secrets:
+    #   approval_token: ${{ secrets.PAT_TOKEN }} # default will be read from the `GITHUB_TOKEN` if not provided. If you want to use a personal access token, you can create a secret and provide it here.
     permissions:
       contents: write
       pull-requests: write
