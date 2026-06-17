@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'devise'
 
-group :test do
+group :development, :test do
   gem 'rspec'
+  gem 'rubocop', require: false
 end
