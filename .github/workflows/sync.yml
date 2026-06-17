@@ -21,8 +21,8 @@ jobs:
     # with:
     #   source_branch: main     # default main
     #   target_branch: develop  # default develop
-    # secrets:
-    #   approval_token: ${{ secrets.PAT_TOKEN }} # default will be read from the `GITHUB_TOKEN` if not provided. If you want to use a personal access token, you can create a secret and provide it here.
+    secrets:
+      approval_token: ${{ secrets.PAT_TOKEN }} # default will be read from the `GITHUB_TOKEN` if not provided. If you want to use a personal access token, you can create a secret and provide it here.
     permissions:
       contents: write
       pull-requests: write
