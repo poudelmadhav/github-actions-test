@@ -5,7 +5,7 @@ on:
 
 jobs:
   test:
-    uses: poudelmadhav/github-workflows/.github/workflows/ruby-tests.yml@v5
+    uses: poudelmadhav/github-workflows/.github/workflows/ruby-tests.yml@v6
     # Optional inputs to override default values in the reusable workflow
     # with:
     #   ruby_version: 3.3 # read from .ruby-version by default if not specified or 4.0
